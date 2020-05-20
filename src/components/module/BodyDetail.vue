@@ -9,8 +9,8 @@
                 Novel
                 </button>
             </div>
-            <div class="desc-title"> {{title}}</div>
-            <div class="desc-subtitle">{{author}}</div>
+            <div class="desc-title"> {{bookTitle}}</div>
+            <div class="desc-subtitle">{{bookAuthor}}</div>
           </div>
           <div class="column status">
             <p>Available</p>
@@ -18,7 +18,7 @@
         </div>
         <div class="desc-text">
           <p>
-            {{description}}
+            {{bookDescription}}
           </p>
         </div>
       </div>
@@ -33,7 +33,10 @@
 
 export default {
   name: 'BodyDetail',
-  props: ['title', 'author', 'description'],
+  props: [
+    'bookTitle',
+    'bookAuthor',
+    'bookDescription'],
 };
 </script>
 <style scoped>
@@ -85,7 +88,7 @@ export default {
     background-color: salmon;
     /* background-image: url(`${this.book.image}`); */
     position: absolute;
-    top: 250px;
+    /* top: 250px; */
     right: 50px;
   }
   .description{
@@ -109,6 +112,7 @@ export default {
   .desc-title{
     margin-top: 20px;
     font-size: 40px;
+    width: 500px;
   }
   .desc-subtitle{
     font-size: 20px;
@@ -123,7 +127,7 @@ export default {
     justify-content: center;
   }
   .button-borrow button {
-    margin-top: 250px;
+    margin-top: 20px;
     margin-bottom: 100px;
   }
   .modal{

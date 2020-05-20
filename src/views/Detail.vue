@@ -62,8 +62,14 @@
       </div>
     </div>
   </section>
-  <BodyDetail :bookTitle ="book.title" :bookAuthor="book.author"
-  :bookDescription="book.description"/>
+  <BodyDetail bookTitle ='Ubur - Ubur Lembur'
+  bookAuthor="Raditya Dika"
+  bookDescription='Hal kedua yang gue nggak sempat kasih tahu Iman: jadi orang yang dikenal publik
+  harus tahan dengan asumsi-asumsi orang. Misalnya, orang-orang penuh dengan asumsi yang salah.
+  Gue kurusan dikit, dikomentarin orang yang baru ketemu, ‘Bang Radit, kurusan, deh.
+  Buat film baru, ya?’ Gue geleng, ‘Enggak.’ Gue bilang, ‘Emang lagi diet aja.’
+  Dia malah balas bilang, ‘Ah, bohong! Paling abis putus cinta, kan?’Giliran gue potong
+  rambut botak, ada orang yang ketemu gue di mall nanya, ‘Wah botak sekarang?'/>
 </div>
 </template>
 
@@ -87,6 +93,7 @@ export default {
       url: 'http://localhost:8000/api/v1/book/admin/',
     };
   },
+  props: ['data'],
   created() {
     this.items = JSON.parse(localStorage.getItem('items'));
     // console.log(this.items);
@@ -185,7 +192,14 @@ export default {
     },
   },
   mounted() {
-    this.getBookById();
+    axios.get(`http://localhost:8000/api/v1/book/${this.$route.params.data}`)
+      .then((res) => {
+        this.book = res.data.data;
+        console.log(this.book.description);
+      })
+      .catch(() => {
+        // console.log(err);
+      });
   },
 };
 </script>
