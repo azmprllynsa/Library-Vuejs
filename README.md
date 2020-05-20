@@ -19,7 +19,7 @@
 - [Installation](#installation)
 - [Screenshots](#screenshots)
 - [Related Project](#Related-Project)
-- [Contact] (#contact)
+- [Contact](#contact)
 
 ## Features
 
