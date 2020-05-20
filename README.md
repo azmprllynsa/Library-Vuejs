@@ -9,7 +9,7 @@
   <img height="100" src="./screenshoot/bookshelf.png"/>&nbsp;
 </p>
 <p align="center">
-  Built with Vue Js. and Firebase
+  Built with Vue Js.
 </p>
 
 ## Table of Contents
